@@ -57,6 +57,22 @@
     {
       "before": ["<leader>", "k"],
       "commands": ["workbench.action.quickOpen"]  
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -192,6 +208,10 @@
     {
       "before": ["d", "d"],
       "after": ["\"", "_", "d", "d"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
     }
   ],
   "vim.handleKeys":{
