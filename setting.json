@@ -1,7 +1,7 @@
 {
-  "vim.easymotion": true,
-  "vim.sneak": true,
+  "vim.statusBarColorControl": true,
   "vim.visualstar": true,
+  "vim.easymotion": true,
   "vim.ignorecase": false,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
@@ -10,7 +10,7 @@
     {
       "before": ["k","j"],
       "after": ["<Esc>"]
-    }
+    } 
   ],
   "vim.leader": ",",
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -41,9 +41,33 @@
     {
       "before": ["<leader>","s", "s"],
       "commands": ["actions.find"]
+    },
+    {
+      "before": ["<leader>","r", "r"],
+      "commands": ["workbench.action.openRecent"]
+    },
+    {
+      "before": ["<leader>","r", "f"],
+      "commands": ["workbench.action.quickOpenLeastRecentlyUsedEditor"]
+    },
+    {
+      "before": ["<leader>","x", "e"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.quickOpen"]  
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["s"],
+      "commands": ["leap.findForward"]
+    },
+    {
+      "before": ["S"],
+      "commands": ["leap.findBackward"]
+    },
     {
       "before": ["%"],
       "commands": ["extension.matchitJumpItems"]
@@ -101,6 +125,10 @@
       "commands": ["workbench.action.files.openFile"]
     },
     {
+      "before": ["<leader>","x", "e"],
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
       "before": ["<leader>", "x", "k"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
@@ -109,8 +137,8 @@
       "commands": ["workbench.action.openRecent"]
     },
     {
-      "before": ["<leader>","k", "k"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": ["<leader>","r", "f"],
+      "commands": ["workbench.action.quickOpenLeastRecentlyUsedEditor"]
     },
     {
       "before": ["<leader>","i", "i"],
@@ -147,6 +175,23 @@
     {
       "before": ["<leader>","w", "q"],
       "after": [":wq"],
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.quickOpen"]  
+    },
+    /// delete not cut 
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
     }
   ],
   "vim.handleKeys":{
@@ -163,17 +208,36 @@
     "**/npm-packages-offline-cache": true
   },
   "search.useGlobalIgnoreFiles": true,
-  "files.autoSave": "afterDelay",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
-  "tabnine.experimentalAutoImports": true,
   "git.openRepositoryInParentFolders": "never",
-  "redhat.telemetry.enabled": false,
-  "workbench.activityBar.location": "hidden",
-  "editor.fontFamily": "'Monaspace Neon', monospace",
+  "editor.fontFamily": "'Mononoki Nerd Font Mono', monospace",
   "editor.fontLigatures": true,
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily"
-  ]
+  ],
+  "editor.accessibilitySupport": "off",
+  "LineNumberDeco.enableRainbow": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#5f00af",
+    "statusBar.noFolderBackground": "#5f00af",
+    "statusBar.debuggingBackground": "#5f00af",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
+  },
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "git.autofetch": true,
+  "vim.showMarksInGutter": true,
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "hidden",
+  "diffEditor.hideUnchangedRegions.enabled": true,
 }
