@@ -3,6 +3,8 @@
   "vim.visualstar": true,
   "vim.easymotion": true,
   "vim.ignorecase": false,
+  "vim.flash.enable": true,
+  "vim.flash.labels": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
@@ -59,12 +61,12 @@
       "commands": ["workbench.action.quickOpen"]  
     },
     {
-      "before": ["d"],
-      "after": ["\"", "_", "d"]
+      "before": ["<leader>","x", "m"],
+      "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["D"],
-      "after": ["\"", "_", "D"]
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
     },
     {
       "before": ["d", "d"],
@@ -76,15 +78,7 @@
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["s"],
-      "commands": ["leap.findForward"]
-    },
-    {
-      "before": ["S"],
-      "commands": ["leap.findBackward"]
-    },
-    {
+   {
       "before": ["%"],
       "commands": ["extension.matchitJumpItems"]
     },
@@ -193,6 +187,10 @@
       "after": [":wq"],
     },
     {
+      "before": ["d", "d"],
+      "after": ["\"", "_", "d", "d"]
+    },
+    {
       "before": ["<leader>", "k"],
       "commands": ["workbench.action.quickOpen"]  
     },
@@ -200,14 +198,6 @@
     {
       "before": ["d"],
       "after": ["\"", "_", "d"]
-    },
-    {
-      "before": ["D"],
-      "after": ["\"", "_", "D"]
-    },
-    {
-      "before": ["d", "d"],
-      "after": ["\"", "_", "d", "d"]
     },
     {
       "before": ["x"],
@@ -232,7 +222,7 @@
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
   "git.openRepositoryInParentFolders": "never",
-  "editor.fontFamily": "'Mononoki Nerd Font Mono', monospace",
+  "editor.fontFamily": "'Mononoki Nerd Font', monospace",
   "editor.fontLigatures": true,
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily"
@@ -240,9 +230,9 @@
   "editor.accessibilitySupport": "off",
   "LineNumberDeco.enableRainbow": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#5f00af",
-    "statusBar.noFolderBackground": "#5f00af",
-    "statusBar.debuggingBackground": "#5f00af",
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87",
     "statusBar.foreground": "#ffffff",
     "statusBar.debuggingForeground": "#ffffff"
   },
@@ -258,6 +248,7 @@
   "git.autofetch": true,
   "vim.showMarksInGutter": true,
   "window.commandCenter": false,
-  "workbench.activityBar.location": "hidden",
   "diffEditor.hideUnchangedRegions.enabled": true,
+  "files.autoSave": "afterDelay",
+  "workbench.activityBar.location": "hidden",
 }
