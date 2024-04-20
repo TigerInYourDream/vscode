@@ -1,197 +1,85 @@
 {
-  "window.title": "${rootName}${separator}${activeEditorShort}",
-  "workbench.editor.showTabs": "single",
-  "window.titleBarStyle": "native",
-  "window.newWindowDimensions": "maximized",
-  "vim.statusBarColorControl": true,
-  "vim.visualstar": true,
+  "LineNumberDeco.enableRainbow": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "cmake.showOptionsMovedNotification": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "'Mononoki Nerd Font', monospace",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.suggest.insertMode": "replace",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "files.autoSave": "afterDelay",
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "nerdtree.alwaysShowSidebar": false,
+  "nerdtree.hideSidebarWhenOpenFile": true,
+  "search.exclude": {
+    "**/*.bundle.js": true,
+    "**/.git": true,
+    "**/bin-packages": true,
+    "**/frontend-dist": true,
+    "**/npm-packages-offline-cache": true
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "selectline.displayFormat": "(%d Lines)",
+  "selectline.statusbarPriority": 101,
+  "sortJSON.orderOverride": [
+    "name",
+    "version",
+    "description"
+  ],
+  "sortJSON.orderUnderride": [
+    "dependencies",
+    "devDependencies"
+  ],
+  "sui-move-analyzer.server.path": "Users/zhaoyue/.cargo/bin/move-analyzer",
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  },
   "vim.easymotion": true,
-  "vim.ignorecase": true,
   "vim.flash.enable": true,
   "vim.flash.labels": "hklyuiopnm,qwertzxcvbasdgjf",
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
+  "vim.foldfix": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-n>": false
+  },
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "white",
   "vim.hlsearch": true,
+  "vim.ignorecase": true,
   "vim.insertModeKeyBindings": [
     {
+      "after": [
+        "<Esc>"
+      ],
       "before": [
         "k",
         "j"
-      ],
-      "after": [
-        "<Esc>"
       ]
     },
     {
+      "after": [],
       "before": [
         "<C-e>"
       ],
-      "after": [],
       "commands": [
         {
-          "command": "cursorEnd",
-          "args": []
+          "args": [],
+          "command": "cursorEnd"
         }
       ]
     }
   ],
-  "vim.operatorPendingModeKeyBindings": [
-    {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "$"
-      ]
-    },
-    {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "^"
-      ]
-    }
-  ],
   "vim.leader": ",",
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "%"
-      ],
-      "commands": [
-        "extension.matchitJumpItems"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "x",
-        "x"
-      ],
-      "commands": [
-        "editor.action.smartSelect.expand"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "z",
-        "z"
-      ],
-      "commands": [
-        "editor.action.smartSelect.shrink"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "i"
-      ],
-      "commands": [
-        "editor.action.commentLine"
-      ]
-    },
-    {
-      "before": [
-        "<leader",
-        "a",
-        "a"
-      ],
-      "commands": [
-        "editor.action.clipboardCopyAction"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "q",
-        "q"
-      ],
-      "commands": [
-        "workbench.action.findInFiles"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "s",
-        "s"
-      ],
-      "commands": [
-        "actions.find"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "r",
-        "r"
-      ],
-      "commands": [
-        "workbench.action.openRecent"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "r",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.quickOpenLeastRecentlyUsedEditor"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "x",
-        "e"
-      ],
-      "commands": [
-        "workbench.explorer.fileView.focus"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "x",
-        "m"
-      ],
-      "commands": [
-        "workbench.action.showCommands"
-      ]
-    },
-    {
-      "before": [
-        "x"
-      ],
-      "after": [
-        "\"",
-        "_",
-        "x"
-      ]
-    },
-    {
-      "before": [
-        "g",
-        "i"
-      ],
-      "commands": [
-        "editor.action.goToImplementation"
-      ]
-    }
-  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -452,14 +340,14 @@
       ]
     },
     {
+      "after": [
+        ":wq"
+      ],
       "before": [
         "<leader>",
         "w",
         "q"
-      ],
-      "after": [
-        ":wq"
-      ],
+      ]
     },
     {
       "before": [
@@ -482,12 +370,12 @@
       ]
     },
     {
-      "before": [
-        "x"
-      ],
       "after": [
         "\"",
         "_",
+        "x"
+      ],
+      "before": [
         "x"
       ]
     },
@@ -497,7 +385,7 @@
         "w"
       ],
       "commands": [
-        "workbench.action.files.save",
+        "workbench.action.files.save"
       ]
     },
     {
@@ -537,29 +425,218 @@
       ]
     },
     {
+      "after": [],
       "before": [
         "<C-e>"
       ],
-      "after": [],
       "commands": [
         {
-          "command": "cursorEnd",
-          "args": []
+          "args": [],
+          "command": "cursorEnd"
         }
+      ]
+    },
+    {
+      "after": [],
+      "before": [
+        "<leader>",
+        "c",
+        "a"
+      ],
+      "commands": [
+        {
+          "args": [],
+          "command": "editor.action.quickFix"
+        }
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "after": [
+        "$"
+      ],
+      "before": [
+        "L"
+      ]
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
+    }
+  ],
+  "vim.showMarksInGutter": true,
+  "vim.statusBarColorControl": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "%"
+      ],
+      "commands": [
+        "extension.matchitJumpItems"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x",
+        "x"
+      ],
+      "commands": [
+        "editor.action.smartSelect.expand"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "z",
+        "z"
+      ],
+      "commands": [
+        "editor.action.smartSelect.shrink"
       ]
     },
     {
       "before": [
         "<leader>",
         "c",
+        "i"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "<leader",
+        "a",
         "a"
       ],
-      "after": [],
       "commands": [
-        {
-          "command": "editor.action.quickFix",
-          "args": []
-        }
+        "editor.action.clipboardCopyAction"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "s"
+      ],
+      "commands": [
+        "actions.find"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.openRecent"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpenLeastRecentlyUsedEditor"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleActivityBarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x",
+        "e"
+      ],
+      "commands": [
+        "workbench.files.action.focusFilesExplorer"
+      ],
+      "when": "editorTextFocus"
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "x",
+        "m"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ],
+      "before": [
+        "x"
       ]
     },
     {
@@ -572,61 +649,27 @@
       ]
     }
   ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-n>": false,
+  "vim.visualstar": true,
+  "window.commandCenter": false,
+  "window.newWindowDimensions": "maximized",
+  // "window.title": "${rootName}${separator}${activeEditorShort}",
+  // "workbench.editor.showTabs": "single",
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff",
+    "editor.findMatchBackground": "#eb1986c1"
   },
-  "zenMode.centerLayout": false,
-  "editor.minimap.enabled": false,
-  "search.exclude": {
-    "**/.git": true,
-    "**/*.bundle.js": true,
-    "**/bin-packages": true,
-    "**/frontend-dist": true,
-    "**/npm-packages-offline-cache": true
-  },
-  "search.useGlobalIgnoreFiles": true,
-  "editor.renderWhitespace": "none",
-  "editor.renderControlCharacters": false,
-  "git.openRepositoryInParentFolders": "never",
-  "editor.fontFamily": "'Mononoki Nerd Font', monospace",
-  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.layoutControl.enabled": false,
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily",
     "sui-move-analyzer.server.path"
   ],
-  "editor.accessibilitySupport": "off",
-  "LineNumberDeco.enableRainbow": true,
-  "workbench.colorCustomizations": {
-    "scrollbar.shadow": "#00000000",
-    "widget.shadow": "#00000000",
-    "statusBar.background": "#005f87",
-    "statusBar.noFolderBackground": "#005f87",
-    "statusBar.debuggingBackground": "#005f87",
-    "statusBar.foreground": "#ffffff",
-    "statusBar.debuggingForeground": "#ffffff"
-  },
-  "terminal.integrated.env.osx": {
-    "CW_NEW_SESSION": "1"
-  },
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1,
-  },
-  "gitlens.rebaseEditor.ordering": "asc",
-  "git.autofetch": true,
-  "vim.showMarksInGutter": true,
-  "window.commandCenter": false,
-  "files.autoSave": "afterDelay",
-  "editor.bracketPairColorization.enabled": true,
-  "workbench.layoutControl.enabled": false,
-  "sui-move-analyzer.server.path": "Users/zhaoyue/.cargo/bin/move-analyzer",
-  "window.zoomLevel": 1,
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  },
-  "selectline.displayFormat": "(%d Lines)",
-  "selectline.statusbarPriority": 101,
-  "nerdtree.alwaysShowSidebar": false,
+  "zenMode.centerLayout": false
 }
