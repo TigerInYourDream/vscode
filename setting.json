@@ -12,7 +12,7 @@
   "editor.renderWhitespace": "all",
   "editor.suggest.insertMode": "replace",
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "vscodevim.vim": 1
   },
   "files.autoSave": "afterDelay",
   "git.autofetch": true,
@@ -20,6 +20,7 @@
   "gitlens.rebaseEditor.ordering": "asc",
   "nerdtree.alwaysShowSidebar": false,
   "nerdtree.hideSidebarWhenOpenFile": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
   "search.exclude": {
     "**/*.bundle.js": true,
     "**/.git": true,
@@ -107,16 +108,6 @@
       ],
       "commands": [
         "workbench.action.findInFiles"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "f",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.files.copyPathOfActiveFile"
       ]
     },
     {
@@ -476,6 +467,16 @@
       "commands": [
         "editor.action.marker.next"
       ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "extension.toggleBool"
+      ],
+      "when": "editorTextFocus"
     }
   ],
   "vim.operatorPendingModeKeyBindings": [
@@ -501,6 +502,16 @@
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "extension.toggleBool"
+      ],
+      "when": "editorTextFocus"
+    },
     {
       "before": [
         "%"
@@ -541,7 +552,7 @@
     },
     {
       "before": [
-        "<leader",
+        "<leader>",
         "a",
         "a"
       ],
@@ -577,16 +588,6 @@
       ],
       "commands": [
         "workbench.action.openRecent"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "r",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.quickOpenLeastRecentlyUsedEditor"
       ]
     },
     {
@@ -639,15 +640,6 @@
         "x"
       ]
     },
-    {
-      "before": [
-        "g",
-        "i"
-      ],
-      "commands": [
-        "editor.action.goToImplementation"
-      ]
-    }
   ],
   "vim.visualstar": true,
   "window.commandCenter": false,
@@ -665,11 +657,22 @@
     "statusBar.debuggingForeground": "#ffffff",
     "editor.findMatchBackground": "#eb1986c1"
   },
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.layoutControl.enabled": false,
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily",
     "sui-move-analyzer.server.path"
   ],
-  "zenMode.centerLayout": false
+  "zenMode.centerLayout": false,
+  // we try to make semantic highlighting look good
+  "editor.semanticHighlighting.enabled": true,
+  // prevent VSCode from modifying the terminal colors
+  "terminal.integrated.minimumContrastRatio": 1,
+  // make the window's titlebar use the workbench colors
+  // applicable if you use Go, this is an opt-in flag!
+  "gopls": {
+    "ui.semanticTokens": true,
+  },
+ "catppuccin.italicKeywords" : false,
+ "catppuccin.italicComments": false,
 }
