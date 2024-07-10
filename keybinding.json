@@ -1,97 +1,147 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "Ctrl+F12",
-        "action": "-workbench.action.toggleMaximizedPanel"
+        "action": "-workbench.action.toggleMaximizedPanel",
+        "key": "Ctrl+F12"
     },
     {
-        "key": "f12",
         "command": "-editor.action.revealDefinition",
+        "key": "f12",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "f12",
         "command": "-editor.gotoNextSymbolFromResult",
+        "key": "f12",
         "when": "hasSymbols"
     },
     {
-        "key": "f12",
         "command": "-goToNextReference",
+        "key": "f12",
         "when": "inReferenceSearchEditor || referenceSearchVisible"
     },
     {
-        "key": "f12",
-        "command": "workbench.action.togglePanel"
+        "command": "workbench.action.togglePanel",
+        "key": "f12"
     },
     {
-        "key": "cmd+j",
-        "command": "-workbench.action.togglePanel"
+        "command": "-workbench.action.togglePanel",
+        "key": "cmd+j"
     },
     {
-        "key": "ctrl+t",
         "command": "-editor.action.transposeLetters",
+        "key": "ctrl+t",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+t",
         "command": "-extension.vim_ctrl+t",
+        "key": "ctrl+t",
         "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
     },
     {
-        "key": "ctrl+t",
         "command": "workbench.action.navigateBack",
+        "key": "ctrl+t",
         "when": "canNavigateBack"
     },
     {
-        "key": "ctrl+-",
         "command": "-workbench.action.navigateBack",
+        "key": "ctrl+-",
         "when": "canNavigateBack"
     },
     {
-        "key": "ctrl+]",
         "command": "-extension.vim_ctrl+]",
+        "key": "ctrl+]",
         "when": "editorTextFocus && vim.active && vim.use<C-]> && !inDebugRepl"
     },
     {
-        "key": "cmd+f12",
         "command": "-editor.action.revealDefinition",
+        "key": "cmd+f12",
         "when": "editorHasDefinitionProvider && editorTextFocus & isWeb && !isInEmbeddedEditor"
     },
     {
-        "key": "ctrl+]",
-        "command": "editor.action.revealDefinition"
+        "command": "editor.action.revealDefinition",
+        "key": "ctrl+]"
     },
     {
-        "key": "cmd+h",
         "command": "editor.action.startFindReplaceAction",
+        "key": "cmd+h",
         "when": "editorFocus || editorIsOpen"
     },
     {
-        "key": "alt+cmd+f",
         "command": "-editor.action.startFindReplaceAction",
+        "key": "alt+cmd+f",
         "when": "editorFocus || editorIsOpen"
     },
     {
-        "key": "alt+x",
-        "command": "workbench.action.showCommands"
+        "command": "workbench.action.showCommands",
+        "key": "alt+x"
     },
     {
-        "key": "ctrl+u",
         "command": "rust-analyzer.run",
+        "key": "ctrl+u",
         "when": "editorLangId == rust"
     },
     {
-        "key": "ctrl+u",
-        "command": "runCommands",
         "args": {
             "commands": [
                 {
-                    "command": "workbench.action.tasks.terminate",
-                    "args": "terminateAll"
+                    "args": "terminateAll",
+                    "command": "workbench.action.tasks.terminate"
                 },
                 "workbench.action.tasks.build"
             ]
         },
+        "command": "runCommands",
+        "key": "ctrl+u",
         "when": "editorLangId != rust"
     },
+    {
+        "command": "selectPrevSuggestion",
+        "key": "ctrl+k",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "command": "workbench.action.quickOpenNavigateNext",
+        "key": "ctrl+j",
+        "when": "inQuickOpen"
+    },
+    {
+        "command": "selectNextSuggestion",
+        "key": "tab",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "command": "workbench.action.quickOpenNavigateNext",
+        "key": "tab",
+        "when": "inQuickOpen"
+    },
+    {
+        "command": "selectPrevSuggestion",
+        "key": "shift+tab",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "key": "shift+tab",
+        "when": "inQuickOpen"
+    },
+    {
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "key": "ctrl+k",
+        "when": "inQuickOpen"
+    },
+    {
+        "command": "list.select",
+        "key": "enter",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "command": "list.select",
+        "key": "l",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "-acceptAlternativeSelectedSuggestion",
+        "key": "shift+tab",
+        "when": "suggestWidgetVisible && textInputFocus && textInputFocus"
+    }
 ]
