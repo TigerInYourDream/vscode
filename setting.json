@@ -6,10 +6,10 @@
   "cmake.showOptionsMovedNotification": false,
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
-  "editor.fontFamily": "'Mononoki Nerd Font', monospace",
+  "editor.fontFamily": "'Jetbrains Mono','Mononoki Nerd Font', monospace",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
+  // "editor.renderWhitespace": "all",
   "editor.suggest.insertMode": "replace",
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1
@@ -19,8 +19,6 @@
   "git.openRepositoryInParentFolders": "never",
   "gitlens.rebaseEditor.ordering": "asc",
   "nerdtree.alwaysShowSidebar": false,
-  "nerdtree.hideSidebarWhenOpenFile": true,
-  "rust-analyzer.checkOnSave.command": "clippy",
   "search.exclude": {
     "**/*.bundle.js": true,
     "**/.git": true,
@@ -42,7 +40,8 @@
   ],
   "sui-move-analyzer.server.path": "Users/zhaoyue/.cargo/bin/move-analyzer",
   "terminal.integrated.env.osx": {
-    "CW_NEW_SESSION": "1"
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
   },
   "vim.easymotion": true,
   "vim.flash.enable": true,
@@ -52,11 +51,15 @@
     "<C-a>": false,
     "<C-n>": false
   },
+  "vim.highlightedyank.duration": 350,
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.textColor": "white",
   "vim.hlsearch": true,
   "vim.ignorecase": true,
+  "vim.replaceWithRegister": true,
+  "vim.surround": true,
+  "editor.cursorSurroundingLines": 8,
   "vim.insertModeKeyBindings": [
     {
       "after": [
@@ -82,6 +85,39 @@
   ],
   "vim.leader": ",",
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "g", "j"], // Jump to next Git change
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["<leader>", "g", "k"], // Jump to previous Git change
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    {
+      "before": [
+        "H"
+      ], // Focus previous tab at the left
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ], // Focus next tab at the right
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
+    },
     {
       "before": [
         "%"
@@ -471,13 +507,56 @@
     {
       "before": [
         "<leader>",
-        "t"
+        "b"
       ],
       "commands": [
         "extension.toggleBool"
       ],
       "when": "editorTextFocus"
-    }
+    },
+    {
+      "before": [
+        "m"
+      ],
+      "commands": [
+        "bo.vimBookMarkTrigger"
+      ]
+    },
+    {
+      "before": [
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
+    },
+    {
+        // delete inner line
+        "before": ["d", "i", "l"],
+        "after": ["^", "d", "g", "_"],
+    },
+    {
+        // change inner line
+        "before": ["c", "i", "l"],
+        "after": ["^", "c", "g", "_"],
+    },
+    {
+        // go replace inner line
+        "before": ["g", "r", "i", "l"],
+        "after": ["^", "g", "r", "g", "_"],
+    },
+    {
+        // go UPPER inner line
+        "before": ["g", "U", "i", "l"],
+        "after": ["^", "g", "U", "g", "_"],
+    },
+    {
+        // go upper inner line
+        "before": ["g", "u", "i", "l"],
+        "after": ["^", "g", "u", "g", "_"],
+    },
   ],
   "vim.operatorPendingModeKeyBindings": [
     {
@@ -502,16 +581,6 @@
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "t"
-      ],
-      "commands": [
-        "extension.toggleBool"
-      ],
-      "when": "editorTextFocus"
-    },
     {
       "before": [
         "%"
@@ -640,6 +709,17 @@
         "x"
       ]
     },
+    // hacks for line text object,
+    {
+        // select inner line
+        "before": ["i", "l"],
+        "after": ["^", "v", "v", "$", "o"],
+    },
+    {
+        // select around line
+        "before": ["a", "l"],
+        "after": ["0", "v", "v", "$"],
+    },
   ],
   "vim.visualstar": true,
   "window.commandCenter": false,
@@ -648,7 +728,6 @@
   // "workbench.editor.showTabs": "single",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
-  "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
     "statusBar.background": "#005f5f",
     "statusBar.noFolderBackground": "#005f5f",
@@ -657,7 +736,6 @@
     "statusBar.debuggingForeground": "#ffffff",
     "editor.findMatchBackground": "#eb1986c1"
   },
-  "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.layoutControl.enabled": false,
   "workbench.settings.applyToAllProfiles": [
     "editor.fontFamily",
@@ -671,8 +749,115 @@
   // make the window's titlebar use the workbench colors
   // applicable if you use Go, this is an opt-in flag!
   "gopls": {
-    "ui.semanticTokens": true,
+    "ui.semanticTokens": false,
   },
- "catppuccin.italicKeywords" : false,
- "catppuccin.italicComments": false,
+  "catppuccin.italicKeywords": false,
+  "catppuccin.italicComments": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "comment.line.double-slash",
+          "punctuation.definition.comment",
+        ],
+        "settings": {
+          "fontStyle": "",
+          // "fontStyle": "italic",  // 斜体
+          // "fontStyle": "italic underline",  // 斜体下划线
+          // "fontStyle": "italic bold underline",  // 斜体粗体下划线
+        }
+      },
+    ]
+  },
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  "cSpell.userWords": [
+    "abbrlink",
+    "actix",
+    "autocxx",
+    "autofetch",
+    "bindgen",
+    "catppuccin",
+    "clippy",
+    "codetour",
+    "Condvar",
+    "dashmap",
+    "Deque",
+    "Derf",
+    "docsmsft",
+    "dylib",
+    "easymotion",
+    "Fira",
+    "foldfix",
+    "gopls",
+    "Gruvbox",
+    "Hexo",
+    "hhmmss",
+    "highlightedyank",
+    "hklyuiopnm",
+    "hlsearch",
+    "ignorecase",
+    "Jetbrains",
+    "libc",
+    "libclang",
+    "matchit",
+    "Mononoki",
+    "nerdtree",
+    "qwertzxcvbasdgjf",
+    "Reciver",
+    "repr",
+    "reqwest",
+    "rgba",
+    "rustc",
+    "selectline",
+    "Shenzhen",
+    "thiserror",
+    "TID's",
+    "titlebar",
+    "titlecase",
+    "uncategorized",
+    "Underride",
+    "visualstar",
+    "vscodevim",
+    "Whenopen",
+    "YYYYMMDDHHMMS",
+    "zhaoyue"
+  ],
+  "cSpell.enabled": true,
+  "editor.hover.enabled": false,
+  "files.autoSaveDelay": 50,
+  "workbench.hover.delay": 0,
+  "workbench.sash.hoverDelay": 100,
+  "errorLens.delay": 5,
+  "errorLens.delayMode": "debounce",
+  "editor.quickSuggestionsDelay": 5,
+  "yaml.schemas": {
+    "file:///Users/zhaoyue/.vscode/extensions/docsmsft.docs-yaml-1.0.4/dist/toc.schema.json": "/toc\\.yml/i"
+  },
+  "C_Cpp.default.compilerPath": "/opt/homebrew/opt/llvm/bin/clang++",
+  "editor.fontSize": 11,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "makefile.configureOnOpen": true,
+  "workbench.activityBar.location": "hidden",
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "workbench.colorTheme": "Snazzy",
 }
